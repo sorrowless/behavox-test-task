@@ -1,0 +1,2 @@
+class RingDependencyError(Exception):
+    pass

@@ -1,0 +1,13 @@
+---
+network:
+  deps:
+    - "wrong"
+mysql:
+  deps:
+    - "network"
+kibana:
+  deps:
+    - "mysql"
+wrong:
+  deps:
+    - "network"

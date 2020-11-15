@@ -50,6 +50,6 @@ service. Code is good commented, so feel free to read it.
 
 Apache 2.0
 
-#### Author Information
+## Author Information
 
 This code was created by [Stan Bogatkin](https://sbog.ru).

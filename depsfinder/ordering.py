@@ -2,11 +2,12 @@ from logging import getLogger
 from typing import Dict
 from depsfinder.exceptions import RingDependencyError
 
+
 class Ordering(object):
     def __init__(self):
         self.logger = getLogger(__name__)
 
-    def calculateDependenciesStart(self, initialData: Dict = {}, orderedData: Dict ={}):
+    def calculateDependenciesStart(self, initialData: Dict = {}, orderedData: Dict = {}):
         initialLength = len(initialData)
         # Simple optimization. We could move this into RingDependencyError check but checking it
         # here will save us up to O(1) cycles.
@@ -54,8 +55,7 @@ class Ordering(object):
         if initialData:
             self.calculateDependenciesStart(initialData, orderedData)
 
-
-    def calculateDependenciesStop(self, initialData: Dict = {}, orderedData: Dict ={}):
+    def calculateDependenciesStop(self, initialData: Dict = {}, orderedData: Dict = {}):
         initialLength = len(initialData)
         if initialLength == 0:
             return orderedData

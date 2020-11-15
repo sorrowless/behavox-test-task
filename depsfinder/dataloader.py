@@ -8,7 +8,7 @@ import yaml
 class DataLoader(object):
     def __init__(self):
         self.logger = getLogger(__name__)
-    
+
     def load(self, filepath: str) -> Dict:
         data = {}
         try:
@@ -16,12 +16,14 @@ class DataLoader(object):
                 data = yaml.load(fh, Loader=yaml.Loader)
                 self.logger.debug(data)
         except FileNotFoundError:
-            self.logger.error('You passed filepath as argument but seems this file does '
+            self.logger.error(
+                'You passed filepath as argument but seems this file does '
                 'not exist. Fix it and try again.'
             )
             sys.exit(1)
         except yaml.scanner.ScannerError:
-            self.logger.error("Seems that file you're trying to parse is not valid yaml. "
+            self.logger.error(
+                "Seems that file you're trying to parse is not valid yaml. "
                 "Fix it and try again."
             )
             sys.exit(1)

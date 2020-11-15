@@ -1,0 +1,21 @@
+os: linux
+dist: bionic
+language: python
+python:
+  - "3.8"
+cache: pip
+branches:
+  only:
+    - master
+stages:
+  - name: test
+install:
+  - pip install -r requirements.txt
+
+jobs:
+  include:
+    - stage: test
+      name: "Test stage"
+      script: |
+        flake8
+        pytest

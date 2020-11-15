@@ -5,7 +5,6 @@ from depsfinder.logging import getLogger
 from depsfinder.ordering import Ordering
 from depsfinder.parser import parser
 
-import sys
 
 logger = getLogger(__name__)
 
@@ -24,10 +23,10 @@ if __name__ == "__main__":
         "start": calculator.calculateDependenciesStart,
         "stop": calculator.calculateDependenciesStop
     }
-    
+
     order = dict()
     data = DataLoader().load(args.file)
     methods[args.action](data, order)
     print(f"\n{args.action} order is: ")
-    for k,v in sorted(order.items(), key=lambda x:[x[1]]):
+    for k, v in sorted(order.items(), key=lambda x: [x[1]]):
         print(f"{k}:{v}")
